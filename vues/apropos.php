@@ -5,7 +5,7 @@
 <h2> L'équipe ayant créé cette application est composée de : </h2>
 	<?php
 		foreach ($lesDeveloppeurs as $developpeur) {
-			echo $developpeur['nom']. " ". $developpeur['prénon']."<br />";
+			echo $developpeur['nom']. " ". $developpeur['prenom']."<br />";
 		}
 	?>
 
