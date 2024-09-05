@@ -15,5 +15,19 @@ switch ($action){
                        include("vues/aPropos.php");
                        break;
                    
+    case 'salles' :    // chemin d'accès à votre fichier JSON
+                        $file = '../json/exempleInfosSalles.json'; 
+                        // mettre le contenu du fichier dans une variable
+                        $data = file_get_contents($file); 
+                        // décoder le flux JSON
+                        $obj = json_decode($data); 
+                        // accéder à l'élément approprié
+                        //echo $obj[0]->name;
+                        echo $obj->name;
+                        
+                        
+                        //include("vues/aPropos.php");
+                        break;
+                   
 }
 

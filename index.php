@@ -24,7 +24,7 @@
 			<ul>
 			<li> Accueil</li>
 			<li> <a href="index.php?controleur=gestionAteliers&action=consultation"> Ateliers </a></li>
-			<li> Option2</li>
+                        <li> <a href="index.php?controleur=general&action=salles"> Salles </a></li>
 			<li> <a href="index.php?controleur=general&action=aPropos"> A propos </a></li>
 			</ul>
 		</nav>
