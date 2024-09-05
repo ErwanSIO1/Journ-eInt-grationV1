@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lesAteliers>
+    <atelier>
+       <id>1</id>
+       <libelle>Théâtre</libelle>
+    </atelier>
+    <atelier>
+       <id>2</id>
+       <libelle>Algorithmes déconnectés</libelle>
+    </atelier>
+    <atelier>
+       <id>3</id>
+       <libelle>Entretiens d'embauche</libelle>
+    </atelier>
+    <atelier>
+       <id>4</id>
+       <libelle>Escape game</libelle>
+    </atelier>
+</lesAteliers>
