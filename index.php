@@ -22,7 +22,7 @@
 	<section>
 		<nav> 
 			<ul>
-			<li> Accueil</li>
+                        <li> <a href="index.php"> Accueil </a></li>
 			<li> <a href="index.php?controleur=gestionAteliers&action=consultation"> Ateliers </a></li>
                         <li> <a href="index.php?controleur=general&action=salles"> Salles </a></li>
 			<li> <a href="index.php?controleur=general&action=aPropos"> A propos </a></li>

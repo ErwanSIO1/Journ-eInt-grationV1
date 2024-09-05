@@ -15,19 +15,28 @@ switch ($action){
                        include("vues/aPropos.php");
                        break;
                    
-    case 'salles' :    // chemin d'accès à votre fichier JSON
-                        $file = '../json/exempleInfosSalles.json'; 
-                        // mettre le contenu du fichier dans une variable
-                        $data = file_get_contents($file); 
-                        // décoder le flux JSON
-                        $obj = json_decode($data); 
-                        // accéder à l'élément approprié
-                        //echo $obj[0]->name;
-                        echo $obj->name;
+    case 'salles' :   
+                        include("modeles/fichierJSON.php");
+                        $connexionJSON = new FichierJSON();
+                        $lesSalles=$connexionJSON->getLesSalles();
                         
-                        
-                        //include("vues/aPropos.php");
+                        echo "<table> <tr> <th>Nom</th> <th>Type</th> <th>Capacité</th> <th>Nombre d'ordinateurs</th> <th>Vidéo projecteur</th> </tr>";
+                        for ($i = 0; $i < 3; $i++) {
+                            foreach ($lesSalles as $salle) {
+                                echo "<tr> <td>".$salle->nom."</td>";
+                                echo "<td>".$salle->type."</td>";
+                                echo "<td>".$salle->capacité."</td>";
+                                echo "<td>".$salle->nbOrdinateurs."</td>";
+                                echo "<td>";
+                                if($salle->videoprojecteur == true){
+                                    echo "Présent";
+                                }else{
+                                    echo "Non présent";
+                                }
+                                echo "</td> </tr>";
+                        }
+                        echo"</table>";
                         break;
                    
 }
-
+}

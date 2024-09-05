@@ -20,7 +20,7 @@ class FichierJSON {
  }
  
  public function __construct($nomFichierFourni="exempleInfosSalles.json"){
-    $this->setFile("../JSON/".$nomFichierFourni);
+    $this->setFile("JSON/".$nomFichierFourni);
  }
  
 
@@ -30,9 +30,11 @@ class FichierJSON {
  * à partir des données issues du fichier XML
  */
 public function getLesSalles(){
-	
    try {
-        $contenuJSONRecup = json_decode($this->file);        
+        // mettre le contenu du fichier dans une variable
+        $data = file_get_contents('json/exempleInfosSalles.json'); 
+        // décoder le flux JSON
+        $contenuJSONRecup = json_decode($data); 
     }
     catch(Exception $e){
         echo $e->getMessage();
