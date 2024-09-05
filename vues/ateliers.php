@@ -3,9 +3,29 @@
 </div>
 <div id="description">
 <h2> Les ateliers envisagés pour la journée d'intégration sont : </h2>
-            <?php
+
+
+    <table>
+        <tr> <th>Atelier</th> <th>Durée</th> <th>Besoin ordi</th> <th>Capacité</th> </tr>
+        <tr><td><?php
 		foreach ($lesAteliers as $atelier) {
 			echo $atelier->libelle."<br />";
 		}
-            ?>
+                ?></td>
+            <td><?php
+		foreach ($lesAteliers as $atelier) {
+			echo $atelier->duree."<br />";
+		}
+                ?></td>
+            <td><?php
+		foreach ($lesAteliers as $atelier) {
+			echo $atelier->besoinordi."<br />";
+		}
+                ?></td>
+            <td><?php
+		foreach ($lesAteliers as $atelier) {
+			echo $atelier->capacite."<br />";
+		}
+                ?></td> </tr>
+    </table>
 </div>

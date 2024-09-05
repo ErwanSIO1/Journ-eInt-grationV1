@@ -3,17 +3,29 @@
     <atelier>
        <id>1</id>
        <libelle>Théâtre</libelle>
+       <duree>0h</duree>
+       <besoinordi>Non</besoinordi>
+       <capacite>20</capacite>
     </atelier>
     <atelier>
        <id>2</id>
        <libelle>Algorithmes déconnectés</libelle>
+       <duree>1h</duree>
+       <besoinordi>Non</besoinordi>
+       <capacite>10</capacite>
     </atelier>
     <atelier>
        <id>3</id>
        <libelle>Entretiens d'embauche</libelle>
+       <duree>2h30</duree>
+       <besoinordi>Non</besoinordi>
+       <capacite>1</capacite>
     </atelier>
     <atelier>
        <id>4</id>
        <libelle>Escape game</libelle>
+       <duree>3h30</duree>
+       <besoinordi>Oui</besoinordi>
+       <capacite>8</capacite>
     </atelier>
 </lesAteliers>
