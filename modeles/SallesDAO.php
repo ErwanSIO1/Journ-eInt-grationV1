@@ -1,13 +1,13 @@
    <?php
-
+include ("modeles/Salles.php");
 /**
  * Classe qui permet d'extraire des données des ateliers
  * stockées dans un fichier xml
  * @author Utilisateur
  */
-class FichierJSON {
+class SallesDAO {
 
-  private $file; // nom du fichier XML contenant les données
+  private $file; // nom du fichier JSON contenant les données
   
 /**
  * fonction qui permet d'affecter le fichier à utiliser
@@ -34,12 +34,18 @@ public function getLesSalles(){
         // mettre le contenu du fichier dans une variable
         $data = file_get_contents('json/exempleInfosSalles.json'); 
         // décoder le flux JSON
-        $contenuJSONRecup = json_decode($data); 
+        $lesSallesJSON = json_decode($data); 
     }
     catch(Exception $e){
         echo $e->getMessage();
     }
-    return $contenuJSONRecup;
+    
+    $lesObjSalles = array();
+        foreach($lesSallesJSON as $uneLigneUneSalle){
+            $uneSalle = new Salles($uneLigneUneSalle->nom,$uneLigneUneSalle->type,$uneLigneUneSalle->capacité,$uneLigneUneSalle->nbOrdinateurs,$uneLigneUneSalle->videoprojecteur);
+            $lesObjSalles[] = $uneSalle;
+    }
+    
+    return $lesObjSalles;
 }
-
 }
