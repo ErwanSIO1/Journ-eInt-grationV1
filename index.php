@@ -25,6 +25,7 @@
                         <li> <a href="index.php"> Accueil </a></li>
 			<li> <a href="index.php?controleur=gestionAteliers&action=ateliers"> Ateliers </a></li>
                         <li> <a href="index.php?controleur=gestionSalles&action=salles"> Salles </a></li>
+                        <li> <a href="index.php?controleur=gestionCompetences&action=competences"> Compétences </a></li>
 			<li> <a href="index.php?controleur=gestionDeveloppeurs&action=aPropos"> A propos </a></li>
 			</ul>
 		</nav>
@@ -41,6 +42,7 @@
                     case 'gestionAteliers'  : include("controleurs/gestionAteliers.php"); break;
                     case 'gestionDeveloppeurs'  : include("controleurs/gestionDeveloppeurs.php"); break;
                     case 'gestionSalles'  : include("controleurs/gestionSalles.php"); break;
+                    case 'gestionCompetences'  : include("controleurs/gestionCompetences.php"); break;
             }
               
                 
