@@ -25,7 +25,7 @@
                         <li> <a href="index.php"> Accueil </a></li>
 			<li> <a href="index.php?controleur=gestionAteliers&action=consultation"> Ateliers </a></li>
                         <li> <a href="index.php?controleur=general&action=salles"> Salles </a></li>
-			<li> <a href="index.php?controleur=general&action=aPropos"> A propos </a></li>
+			<li> <a href="index.php?controleur=gestionDeveloppeurs&action=aPropos"> A propos </a></li>
 			</ul>
 		</nav>
 		<div id="contenu">
@@ -39,6 +39,7 @@
             switch ($controleur){
                     case 'general'          : include("controleurs/gestionGlobale.php"); break;
                     case 'gestionAteliers'  : include("controleurs/gestionAteliers.php"); break;
+                    case 'gestionDeveloppeurs'  : include("controleurs/gestionDeveloppeurs.php"); break;
             }
               
                 

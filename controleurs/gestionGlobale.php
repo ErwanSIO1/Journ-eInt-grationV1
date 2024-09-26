@@ -1,5 +1,5 @@
 <?php
-include ("modeles/Base.php");
+
 if (isset($_GET['action']))
     $action=filter_var($_GET['action'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 else 
@@ -8,12 +8,6 @@ else
 
 switch ($action){
     case 'accueil'  : include("vues/accueil.html"); break;
-
-    case 'aPropos'  :  $connexionBD = new Base('consultSIO2Integration','pwd2Consult');
-                       $resultatDeLaRequete=$connexionBD->query("SELECT nom, prenom FROM Developpeur;");
-                       $lesDeveloppeurs = $resultatDeLaRequete->fetchAll();
-                       include("vues/aPropos.php");
-                       break;
                    
     case 'salles' :   
                         include("modeles/fichierJSON.php");
@@ -21,7 +15,7 @@ switch ($action){
                         $lesSalles=$connexionJSON->getLesSalles();
                         
                         echo "<table> <tr> <th>Nom</th> <th>Type</th> <th>Capacité</th> <th>Nombre d'ordinateurs</th> <th>Vidéo projecteur</th> </tr>";
-                        for ($i = 0; $i < 3; $i++) {
+                        
                             foreach ($lesSalles as $salle) {
                                 echo "<tr> <td>".$salle->nom."</td>";
                                 echo "<td>".$salle->type."</td>";
@@ -38,5 +32,5 @@ switch ($action){
                         echo"</table>";
                         break;
                    
-}
+
 }

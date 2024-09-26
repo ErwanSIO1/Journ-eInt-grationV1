@@ -3,7 +3,7 @@
 class Base {
     private $db;
     
-     public function __construct(string $user, string $mdp) {         
+     public function __construct(string $nomBdDistante, string $user, string $mdp) {         
 		try{
 			/* =============================BD LOCALE =============================================== */
 			
