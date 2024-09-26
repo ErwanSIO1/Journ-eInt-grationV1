@@ -2,4 +2,4 @@
 include("../../modeles/Base.php");
 include("../../modeles/DeveloppeurDAO.php");
 $connexionSourceDonnees = new DeveloppeurDAO();
-$connexionSourceDonnees->deleteDeveloppeur($_GET['nom']);
+$connexionSourceDonnees->editDeveloppeur($_GET['nom']);

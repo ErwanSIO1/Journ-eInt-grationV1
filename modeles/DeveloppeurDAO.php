@@ -1,6 +1,6 @@
 <?php
-include ("modeles/Base.php");
-include ("modeles/Developpeur.php");
+include_once ("Base.php");
+include_once ("Developpeur.php");
 class DeveloppeurDAO extends Base{
     
     public function __construct(){
@@ -16,6 +16,21 @@ class DeveloppeurDAO extends Base{
             $lesObjDeveloppeurs[] = $unDeveloppeur;
         }
         return $lesObjDeveloppeurs;
+    }
+    
+    public function deleteDeveloppeur($nom){
+        $resultatDeLaRequete=$this->exec("DELETE nom, prenom FROM Developpeur WHERE nom=".$nom.";");
+        return $resultatDeLaRequete;
+    }
+    
+    public function addDeveloppeur($nom){
+        $resultatDeLaRequete=$this->exec(" WHERE nom=".$nom.";");
+        return $resultatDeLaRequete;
+    }
+    
+    public function editDeveloppeur($nom){
+        $resultatDeLaRequete=$this->exec(" WHERE nom=".$nom.";");
+        return $resultatDeLaRequete;
     }
     
 }

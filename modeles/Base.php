@@ -38,6 +38,10 @@ class Base {
     public function query($sql) {
         return $this->db->query($sql);
     }
+    
+    public function exec($sql) {
+        return $this->db->exec($sql);
+    }
 	
 	
 	

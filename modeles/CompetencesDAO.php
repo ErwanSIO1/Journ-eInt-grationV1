@@ -18,4 +18,18 @@ class CompetencesDAO extends Base{
         return $lesObjCompetences;
     }
     
+    public function deleteCompetence($nom){
+        $resultatDeLaRequete=$this->exec("DELETE nom, prenom FROM Developpeur WHERE nom=".$nom.";");
+        return $resultatDeLaRequete;
+    }
+    
+    public function addCompetence($nom){
+        $resultatDeLaRequete=$this->exec(" WHERE nom=".$nom.";");
+        return $resultatDeLaRequete;
+    }
+    
+    public function editCompetence($nom){
+        $resultatDeLaRequete=$this->exec(" WHERE nom=".$nom.";");
+        return $resultatDeLaRequete;
+    }
 }
