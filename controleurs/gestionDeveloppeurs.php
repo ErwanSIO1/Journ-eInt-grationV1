@@ -17,6 +17,8 @@ switch ($action){
                         $connexionSourceDonnees->addDeveloppeur($_GET['id']);
                         include("vues/apropos.php");
                         break;
+
+
     case 'modifierDeveloppeur'  :  
                         $connexionSourceDonnees = new DeveloppeurDAO();
                         $connexionSourceDonnees->editDeveloppeur($_GET['nom']);
@@ -25,6 +27,7 @@ switch ($action){
     case 'supprimerDeveloppeur'  :  
                         $connexionSourceDonnees = new DeveloppeurDAO();
                         $connexionSourceDonnees->deleteDeveloppeur($_GET['nom']);
+                        $collectionDeveloppeurs = $connexionSourceDonnees->getLesDeveloppeurs();
                         include("vues/apropos.php");
                         break;
 }

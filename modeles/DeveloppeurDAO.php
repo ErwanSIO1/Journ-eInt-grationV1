@@ -19,7 +19,7 @@ class DeveloppeurDAO extends Base{
     }
     
     public function deleteDeveloppeur($id){
-        $resultatDeLaRequete=$this->exec("DELETE id,nom,prenom FROM Developpeur WHERE id=".$id.";");
+        $resultatDeLaRequete=$this->exec("DELETE FROM Developpeur WHERE id=".$id.";");
         return $resultatDeLaRequete;
     }
     
