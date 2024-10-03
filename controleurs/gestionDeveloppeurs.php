@@ -27,17 +27,15 @@ switch ($action){
                        break;
                    
     case 'modifierDeveloppeur'  :  
-                        $connexionSourceDonnees = new DeveloppeurDAO();
-                        $connexionSourceDonnees->editDeveloppeur($_GET['id']);
-                        $collectionDeveloppeurs = $connexionSourceDonnees->getLesDeveloppeurs();
-                        include("vues/apropos.php");
+                        include("vues/v_formulaire.php");
                         break;
     case 'developpeurModifie'  :  
                        $prenom = $_POST['prenom'];
                        $nom = $_POST['nom'];
+                       $id = $_POST['id'];
                        $connexionSourceDonnees =  new DeveloppeurDAO();
-                       $resultat = $connexionSourceDonnees->editDeveloppeur($nom,$prenom);
-                       include("vues/v_developpeurAjoute.php");
+                       $resultat = $connexionSourceDonnees->editDeveloppeur($id,$nom,$prenom);
+                       include("vues/v_developpeurModifie.php");
                        break;
                     
     case 'supprimerDeveloppeur'  :  

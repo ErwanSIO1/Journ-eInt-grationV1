@@ -29,7 +29,7 @@ class DeveloppeurDAO extends Base{
     }
     
     public function editDeveloppeur($id, $nom, $prenom){
-        $resultatDeLaRequete=$this->exec("UPDATE `Developpeur` SET ``nom`='".$nom."',`prenom`='".$prenom."' WHERE id=".$id.";");
+        $resultatDeLaRequete=$this->exec("UPDATE `Developpeur` SET `nom`='".$nom."',`prenom`='".$prenom."' WHERE id=".$id.";");
         return $resultatDeLaRequete;
     }
     

@@ -7,9 +7,14 @@ if (isset($_GET['action'])) {
 
 
 switch ($action){
+  
     case 'modifierDeveloppeur'  :
+      echo "modifier.";
                         echo"<form action=/index.php?controleur=modifierDeveloppeur&action=developpeurModifie method='POST'>".
-                            "<div>".
+                       "<div>".
+                        "<input type ='hidden' name='id' id='id' value ='".$_GET['id']."'/>".
+                        "</div>".
+                              "<div>".
                               "<label for='prenom'>Prenom :</label>".
                               "<input name='prenom' id='prenom'/>".
                             "</div>".
@@ -18,11 +23,12 @@ switch ($action){
                               "<input name='nom' id='nom'/>".
                             "</div>".
                             "<div>".
-                              "<button>Ajouter</button>".
+                              "<button>Modifier</button>".
                             "</div>".
                           "</form>";
                         break;
     case 'ajouterDeveloppeur'  :
+      echo "ajouter.";
                         echo"<form action=/index.php?controleur=ajouterDeveloppeur&action=developpeurAjoute method='POST'>".
                             "<div>".
                               "<label for='prenom'>Prenom :</label>".
