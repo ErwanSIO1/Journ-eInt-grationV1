@@ -11,8 +11,8 @@ class DeveloppeurDAO extends Base{
         $resultatDeLaRequete=$this->query("SELECT * FROM Developpeur;");
         $tableauDeveloppeurs = $resultatDeLaRequete->fetchAll();
         $lesObjDeveloppeurs = array();
-        foreach($tableauDeveloppeurs as $uneLigneUnDeveloppeurs){
-            $unDeveloppeur = new Developpeur($uneLigneUnDeveloppeurs["id"],$uneLigneUnDeveloppeurs["prenom"],$uneLigneUnDeveloppeurs["nom"]);
+        foreach($tableauDeveloppeurs as $uneLigneUnDeveloppeur){
+            $unDeveloppeur = new Developpeur($uneLigneUnDeveloppeur["id"],$uneLigneUnDeveloppeur["prenom"],$uneLigneUnDeveloppeur["nom"]);
             $lesObjDeveloppeurs[] = $unDeveloppeur;
         }
         return $lesObjDeveloppeurs;
@@ -23,13 +23,13 @@ class DeveloppeurDAO extends Base{
         return $resultatDeLaRequete;
     }
     
-    public function addDeveloppeur($id){
-        $resultatDeLaRequete=$this->exec(" WHERE nom=".$id.";");
+    public function addDeveloppeur($nom,$prenom){
+        $resultatDeLaRequete=$this->exec("INSERT INTO Developpeur (`nom`, `prenom`) VALUES('".$nom."','".$prenom."');");
         return $resultatDeLaRequete;
     }
     
-    public function editDeveloppeur($id){
-        $resultatDeLaRequete=$this->exec(" WHERE nom=".$id.";");
+    public function editDeveloppeur($id, $nom, $prenom){
+        $resultatDeLaRequete=$this->exec("UPDATE `Developpeur` SET ``nom`='".$nom."',`prenom`='".$prenom."' WHERE id=".$id.";");
         return $resultatDeLaRequete;
     }
     

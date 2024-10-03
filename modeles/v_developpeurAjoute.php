@@ -1,4 +1,4 @@
-<?php
+z<?php
 if($resultat>=1){
     echo $prenom." ".$nom." ajouté.";
 }else{

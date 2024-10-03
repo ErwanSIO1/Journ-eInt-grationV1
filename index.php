@@ -43,6 +43,9 @@
                     case 'gestionDeveloppeurs'  : include("controleurs/gestionDeveloppeurs.php"); break;
                     case 'gestionSalles'  : include("controleurs/gestionSalles.php"); break;
                     case 'gestionCompetences'  : include("controleurs/gestionCompetences.php"); break;
+                    case 'formulaire'  : include("vues/v_formulaire.php"); break;
+                    case 'ajouterDeveloppeur'          : include("controleurs/gestionDeveloppeurs.php"); break;
+                    case 'modifierDeveloppeur'          : include("controleurs/gestionDeveloppeurs.php"); break;
             }
               
                 

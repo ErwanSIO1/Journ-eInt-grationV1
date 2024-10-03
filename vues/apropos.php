@@ -8,12 +8,11 @@
 	foreach ($collectionDeveloppeurs as $developpeur) {
 		echo $developpeur->getNom(). " ". $developpeur->getPrenom().
                         //"<a href='vues/actions/supprimerDeveloppeur.php?nom=".$developpeur->getNom()."'> Supprimer</a>".
-                        "<a href=index.php?controleur=gestionDeveloppeurs&action=supprimerDeveloppeur&nom=".$developpeur->getId()."> Supprimer</a>".
-                        "<a href=vues/actions/modifierDeveloppeur.php?nom=".$developpeur->getId()."> Modifier</a>".
+                        "<a href=index.php?controleur=gestionDeveloppeurs&action=supprimerDeveloppeur&id=".$developpeur->getId()."> Supprimer</a>".
+                        "<a href=index.php?controleur=gestionDeveloppeurs&action=supprimerDeveloppeur&id=".$developpeur->getId()."> Modifier</a>".
                         "<br><br>";
 	}
-
-    echo "<a href='/vues/v_ajouterDeveloppeur.php'> Ajouter</a>"
+        echo "<button><a href='index.php?controleur=formulaire&action=ajouterDeveloppeur'>Ajouter un développeur</a></button>";
 ?>
 </div>
 </html>

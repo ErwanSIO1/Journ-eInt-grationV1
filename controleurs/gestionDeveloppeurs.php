@@ -15,18 +15,34 @@ switch ($action){
     case 'ajouterDeveloppeur'  : 
                         $connexionSourceDonnees = new DeveloppeurDAO();
                         $connexionSourceDonnees->addDeveloppeur($_GET['id']);
-                        include("vues/apropos.php");
+                        $collectionDeveloppeurs = $connexionSourceDonnees->getLesDeveloppeurs();
+                        include("vues/v_formulaire?=action=ajouterDeveloppeur.php");
                         break;
-
-
+    case 'developpeurAjoute' : 
+                       $prenom = $_POST['prenom'];
+                       $nom = $_POST['nom'];
+                       $connexionSourceDonnees =  new DeveloppeurDAO();
+                       $resultat = $connexionSourceDonnees->addDeveloppeur($nom,$prenom);
+                       include("vues/v_developpeurAjoute.php");
+                       break;
+                   
     case 'modifierDeveloppeur'  :  
                         $connexionSourceDonnees = new DeveloppeurDAO();
-                        $connexionSourceDonnees->editDeveloppeur($_GET['nom']);
+                        $connexionSourceDonnees->editDeveloppeur($_GET['id']);
+                        $collectionDeveloppeurs = $connexionSourceDonnees->getLesDeveloppeurs();
                         include("vues/apropos.php");
                         break;
+    case 'developpeurModifie'  :  
+                       $prenom = $_POST['prenom'];
+                       $nom = $_POST['nom'];
+                       $connexionSourceDonnees =  new DeveloppeurDAO();
+                       $resultat = $connexionSourceDonnees->editDeveloppeur($nom,$prenom);
+                       include("vues/v_developpeurAjoute.php");
+                       break;
+                    
     case 'supprimerDeveloppeur'  :  
                         $connexionSourceDonnees = new DeveloppeurDAO();
-                        $connexionSourceDonnees->deleteDeveloppeur($_GET['nom']);
+                        $connexionSourceDonnees->deleteDeveloppeur($_GET['id']);
                         $collectionDeveloppeurs = $connexionSourceDonnees->getLesDeveloppeurs();
                         include("vues/apropos.php");
                         break;

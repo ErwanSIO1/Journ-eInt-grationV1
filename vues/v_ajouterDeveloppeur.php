@@ -3,8 +3,6 @@ include("../modeles/Base.php");
 include("../modeles/DeveloppeurDAO.php");
 
 ?>
-
-
 <form action="/index.php?controleur=gestionDeveloppeur&action=ajouterDeveloppeur" method="POST">
   <div>
     <label for="prenom">Prenom :</label>
