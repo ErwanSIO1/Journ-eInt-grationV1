@@ -7,9 +7,10 @@
 <?php
 	foreach ($collectionDeveloppeurs as $developpeur) {
 		echo $developpeur->getNom(). " ". $developpeur->getPrenom().
-                        "<a href='vues/actions/supprimerDeveloppeur.php?nom=".$developpeur->getNom()."'> Supprimer</a>".
-                        "<a href='vues/actions/ajouterDeveloppeur.php?nom=".$developpeur->getNom()."'> Ajouter</a>".
-                        "<a href='vues/actions/modifierDeveloppeur.php?nom=".$developpeur->getNom()."'> Modifier</a>".
+                        //"<a href='vues/actions/supprimerDeveloppeur.php?nom=".$developpeur->getNom()."'> Supprimer</a>".
+                        "<a href=index.php?controleur=gestionDeveloppeurs&action=supprimerDeveloppeur&nom=".$developpeur->getId()."'> Supprimer</a>".
+                        "<a href='vues/actions/ajouterDeveloppeur.php?nom=".$developpeur->getId()."'> Ajouter</a>".
+                        "<a href='vues/actions/modifierDeveloppeur.php?nom=".$developpeur->getId()."'> Modifier</a>".
                         "<br><br>";
 	}
 ?>

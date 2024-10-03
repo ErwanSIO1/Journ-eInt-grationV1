@@ -8,28 +8,28 @@ class DeveloppeurDAO extends Base{
     }
     
     public function getLesDeveloppeurs(){
-        $resultatDeLaRequete=$this->query("SELECT nom, prenom FROM Developpeur;");
+        $resultatDeLaRequete=$this->query("SELECT * FROM Developpeur;");
         $tableauDeveloppeurs = $resultatDeLaRequete->fetchAll();
         $lesObjDeveloppeurs = array();
         foreach($tableauDeveloppeurs as $uneLigneUnDeveloppeurs){
-            $unDeveloppeur = new Developpeur($uneLigneUnDeveloppeurs["prenom"],$uneLigneUnDeveloppeurs["nom"]);
+            $unDeveloppeur = new Developpeur($uneLigneUnDeveloppeurs["id"],$uneLigneUnDeveloppeurs["prenom"],$uneLigneUnDeveloppeurs["nom"]);
             $lesObjDeveloppeurs[] = $unDeveloppeur;
         }
         return $lesObjDeveloppeurs;
     }
     
-    public function deleteDeveloppeur($nom){
-        $resultatDeLaRequete=$this->exec("DELETE nom, prenom FROM Developpeur WHERE nom=".$nom.";");
+    public function deleteDeveloppeur($id){
+        $resultatDeLaRequete=$this->exec("DELETE id,nom,prenom FROM Developpeur WHERE id=".$id.";");
         return $resultatDeLaRequete;
     }
     
-    public function addDeveloppeur($nom){
-        $resultatDeLaRequete=$this->exec(" WHERE nom=".$nom.";");
+    public function addDeveloppeur($id){
+        $resultatDeLaRequete=$this->exec(" WHERE nom=".$id.";");
         return $resultatDeLaRequete;
     }
     
-    public function editDeveloppeur($nom){
-        $resultatDeLaRequete=$this->exec(" WHERE nom=".$nom.";");
+    public function editDeveloppeur($id){
+        $resultatDeLaRequete=$this->exec(" WHERE nom=".$id.";");
         return $resultatDeLaRequete;
     }
     
